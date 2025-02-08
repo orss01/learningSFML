@@ -12,6 +12,7 @@ FetchContent_Declare(SFML
     SYSTEM)
 FetchContent_MakeAvailable(SFML)
 include_directories(inc)
+file(COPY assets/ DESTINATION ${CMAKE_BINARY_DIR}/assets)
 
 add_executable(main src/main.cpp src/Game.cpp)
 target_compile_features(main PRIVATE cxx_std_17)

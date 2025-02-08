@@ -3,10 +3,12 @@
 
 int main()
 {
+    //Init srand
+    std::srand(static_cast<unsigned>(time(NULL)));
     Game *game = new Game();
 
     //Game Loop
-    while (game->running())
+    while (game->running() && !game->getEndgame())
     {
         game->update();
         game->render();
